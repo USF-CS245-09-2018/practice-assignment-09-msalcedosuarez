@@ -667,7 +667,7 @@ void get_taskList() {
         char *str = malloc(50 * sizeof(char));
 
         //concatenates PID and passes to stat
-        strcpy(str, "");
+        strcpy(str, "-");
         strcat(str, ent->d_name);
         stat(str, &buf3);
         //gets user
