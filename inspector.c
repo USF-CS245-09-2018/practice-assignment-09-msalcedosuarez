@@ -23,9 +23,9 @@
 /**
  * Logging functionality. Set DEBUG to 1 to enable logging, 0 to disable.
  */
-#define LOG(fmt, ...) \
-    do { if (DEBUG) fprintf(stderr, "%s:%d:%s(): " fmt, __FILE__, \
-            __LINE__, __func__, __VA_ARGS__); } while (0)
+// #define LOG(fmt, ...) \
+//     do { if (DEBUG) fprintf(stderr, "%s:%d:%s(): " fmt, __FILE__, \
+//             __LINE__, __func__, __VA_ARGS__); } while (0)
 
 /* Function prototypes */
 void parse_sys();
@@ -779,10 +779,10 @@ int main(int argc, char *argv[]) {
       get_taskList();
     }
 
-    LOG("Options selected: %s%s%s%s\n",
-            options.hardware ? "hardware " : "",
-            options.system ? "system " : "",
-            options.task_list ? "task_list " : "",
-            options.task_summary ? "task_summary" : "");
+    // LOG("Options selected: %s%s%s%s\n",
+    //         options.hardware ? "hardware " : "",
+    //         options.system ? "system " : "",
+    //         options.task_list ? "task_list " : "",
+    //         options.task_summary ? "task_summary" : "");
     return 0;
 }
