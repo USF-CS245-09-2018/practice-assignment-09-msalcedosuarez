@@ -512,10 +512,9 @@ void parse_task() {
   int tasks = 0;
   struct dirent *entry;
   struct stat buf1;
+
   if((dir = opendir ("./")) != NULL) {
-    printf(dir);
     while ((entry = readdir (dir)) != NULL) {
-      //printf("entry: %s\n", entry);
       stat(entry->d_name, &buf1);
       if (isdigit(entry->d_name[0]) && S_ISDIR(buf1.st_mode)){
         tasks++;
@@ -668,7 +667,7 @@ void get_taskList() {
         char *str = malloc(50 * sizeof(char));
 
         //concatenates PID and passes to stat
-        strcpy(str, "./");
+        strcpy(str, "");
         strcat(str, ent->d_name);
         stat(str, &buf3);
         //gets user
