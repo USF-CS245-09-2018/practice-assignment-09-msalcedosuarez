@@ -513,7 +513,9 @@ void parse_task() {
   struct dirent *entry;
   struct stat buf1;
   if((dir = opendir ("./")) != NULL) {
+    printf("dir: %s\n", dir);
     while ((entry = readdir (dir)) != NULL) {
+      printf("entry: %s\n", entry);
       stat(entry->d_name, &buf1);
       if (isdigit(entry->d_name[0]) && S_ISDIR(buf1.st_mode)){
         tasks++;
