@@ -23,9 +23,12 @@
 /**
  * Logging functionality. Set DEBUG to 1 to enable logging, 0 to disable.
  */
-// #define LOG(fmt, ...) \
-//     do { if (DEBUG) fprintf(stderr, "%s:%d:%s(): " fmt, __FILE__, \
-//             __LINE__, __func__, __VA_ARGS__); } while (0)
+
+/**
+#define LOG(fmt, ...) \
+    do { if (DEBUG) fprintf(stderr, "%s:%d:%s(): " fmt, __FILE__, \
+            __LINE__, __func__, __VA_ARGS__); } while (0)
+*/
 
 /* Function prototypes */
 void parse_sys();
@@ -755,7 +758,7 @@ int main(int argc, char *argv[]) {
     }
 
     if (alt_proc == true) {
-        LOG("Using alternative proc directory: %s\n", procfs_loc);
+        //LOG("Using alternative proc directory: %s\n", procfs_loc);
         /* Remove two arguments from the count: one for -p, one for the
          * directory passed in: */
         argc = argc - 2;
